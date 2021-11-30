@@ -101,7 +101,10 @@ function App() {
         <>
           Ejemplo 3D
           <div className="panelControls">
-            <ButtonsPanel changeDirHorizontal={changeDirHorizontal} />
+            <ButtonsPanel
+              changeDirHorizontal={changeDirHorizontal}
+              positionX={positionX}
+            />
 
             <div className="button" onClick={Restart}>
               Reiniciar

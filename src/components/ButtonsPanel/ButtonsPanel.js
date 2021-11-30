@@ -1,6 +1,6 @@
 import "./style.sass";
 import { useEffect, useState } from "react";
-export function ButtonsPanel({ changeDirHorizontal }) {
+export function ButtonsPanel({ changeDirHorizontal, positionX }) {
   const interval = 100;
   const [position, setposition] = useState(0);
   const [activeTempMore, setactiveTempMore] = useState(false);
@@ -20,8 +20,7 @@ export function ButtonsPanel({ changeDirHorizontal }) {
   useEffect(() => {
     if (activeTempDis) {
       const timer = setInterval(() => {
-        setposition((position) => position + 1);
-        changeDirHorizontal(position);
+        changeDirHorizontal(positionX + 1);
       }, interval);
       return () => {
         clearInterval(timer);
@@ -29,8 +28,7 @@ export function ButtonsPanel({ changeDirHorizontal }) {
     }
     if (activeTempMore) {
       const timer = setInterval(() => {
-        setposition((position) => position - 1);
-        changeDirHorizontal(position);
+        changeDirHorizontal(positionX - 1);
       }, interval);
       return () => {
         clearInterval(timer);
